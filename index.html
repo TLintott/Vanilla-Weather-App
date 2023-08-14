@@ -19,21 +19,27 @@
     ></script>
 
     <title>Vanilla Weather App</title>
-    <a href="css/styles.css"></a>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <form class="search">
-        <input
-          type="serach"
-          placeholder="Search city..."
-          class="form-input-text"
-        />
-
-        <input type="submit" value="search" />
-      </form>
       <div class="weather-app-wrap">
         <div class="weather-app">
+          <div class="row">
+            <form class="search">
+              <input
+                type="serach"
+                placeholder="Search city..."
+                class="form-input-text"
+              />
+
+              <input
+                type="submit"
+                value="search"
+                class="btn btn-primary w-10 search-btn"
+              />
+            </form>
+          </div>
           <div class="overview">
             <h1 id="city">London</h1>
             <ul>
