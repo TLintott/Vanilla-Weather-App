@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
     <meta charset="UTF-8" />
@@ -23,23 +30,29 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app-wrap">
+      <div class="app">
         <div class="weather-app">
           <div class="row">
-            <form class="search">
-              <input
-                type="serach"
-                placeholder="Search city..."
-                class="form-input-text"
-              />
-
-              <input
-                type="submit"
-                value="search"
-                class="btn btn-primary w-10 search-btn"
-              />
+            <form class="search-form">
+              <div class="row">
+                <div class="col-9">
+                  <input
+                    type="search"
+                    placeholder="Enter a city.."
+                    class="form-control search-input input-text"
+                  />
+                </div>
+                <div class="col-3 p-0">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100 search-btn"
+                    value="Search"
+                  />
+                </div>
+              </div>
             </form>
           </div>
+
           <div class="overview">
             <h1 id="city">London</h1>
             <ul>
