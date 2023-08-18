@@ -39,6 +39,8 @@ function findTemperature(response){
 
  let celsiusTemperature = response.data.main.temp;
 
+
+ 
  temperature.innerHTML= Math.round(celsiusTemperature);
  city.innerHTML = response.data.name
 
@@ -47,9 +49,9 @@ function findTemperature(response){
 
 }
 
-function search(city) {
-let apiKey = "4b123t2611cd046f6e3o15d4a0230eef";
-let apiUrl = "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric";
-axios.get(apiUrl).then(displayTemperature);
-console.log(apiUrl)
+function showTemperature (response){
+console.log(response.data);
 }
+let apiKey = "4b123t2611cd046f6e3o15d4a0230eef";
+let apiUrl = "https://api.shecodes.io/weather/v1/current?query=${city}&key=4b123t2611cd046f6e3o15d4a0230eef&units=metric";
+axios.get(apiUrl).then(showTemperature);
