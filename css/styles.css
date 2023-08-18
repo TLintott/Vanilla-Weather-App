@@ -1,10 +1,10 @@
 
 body{
-background-color: #f4eeff;
+background-color: #f5eee6;;
 }
 
 h1{
-color: #424874;
+color: #c86b85;
 font-size: 38px;
 font-family: 'Bricolage Grotesque', sans-serif;
 font-weight: 700;
@@ -16,7 +16,7 @@ margin: 20px 0 0px;
 
 
 a{
-color: #007bff;
+color: rgb(135, 135, 135);
 font-family: 'Bricolage Grotesque', sans-serif;
 text-decoration: none;
 background-color: transparent;
@@ -65,7 +65,7 @@ padding-bottom: 30px;
 
 
 .input-text {
-    background: #f4eeff;
+    background: #f5eee6;
     border: none;
     border-radius: 6px;
     color: rgba(39, 33, 66, .4);
@@ -80,7 +80,7 @@ padding-bottom: 30px;
 .search-btn {
     font-family: 'Bricolage Grotesque',
         sans-serif;
-    background: #424874;
+    background: #c86b85;
     border: none;
     font-size: 16px;
     font-weight: 700;
@@ -110,9 +110,10 @@ padding-bottom: 30px;
 }
 
 .weather-temperature .active {
-    color: rgb(33, 33, 33);
+    color: #c86b85;
     cursor: default;
 }
+
 
 small {
     font-family: 'Bricolage Grotesque',sans-serif;
