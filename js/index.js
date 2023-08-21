@@ -23,7 +23,61 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 //Search Engine 
+
+function displayForecast(){  
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue","Wed", "Thu","Fri"];
+  days.forEach(function(day){
+
+ 
+  forecastHTML= forecastHTML + 
+   `
+            <div class="col">
+              <div class="WeatherForecastPreview">
+                <div class="forecast-time">${day}</div>
+
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/shower-rain-day.png"
+                />
+                <div class="forecast-temperature">
+                  <span class="forecast-temperature-max">21°</span>
+                  <span class="forecast-temperature-min">17°</span>
+                </div>
+              </div>
+            </div>
+ `;
+ })
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+
+}
+
+
+
+
+
+
+function getForecast(coordinates) {
+//console.log(coordinates);
+  let apiKey = "4b123t2611cd046f6e3o15d4a0230eef";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+  //console.log(apiUrl);
+}
+
+
+
 
 function findTemperature(response){
  let temporature =document.querySelector("#temporature");
@@ -35,7 +89,7 @@ function findTemperature(response){
  let icon = document.querySelector("#icon");
 
  let celsiusTemperature = response.data.temperature.current;
-console.log(response.data);
+//console.log(response.data);
  date.innerHTML = formatDate(response.data.time * 1000);
  temperature.innerHTML= Math.round(celsiusTemperature);
  city.innerHTML = response.data.city;
@@ -45,6 +99,8 @@ console.log(response.data);
  icon.setAttribute(
   "src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
  );
+
+ getForecast(response.data.coordinates)
 }
 
 
@@ -97,3 +153,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("London");
+displayForecast();
