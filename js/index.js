@@ -127,33 +127,8 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 
-//units 
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let celsiusTemperature = parseFloat(temperatureElement.innerHTML);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = parseFloat(temperatureElement.innerHTML);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("London");
