@@ -89,6 +89,8 @@ padding-bottom: 30px;
 }
 
 .weather-temperature strong {
+    font-family:'Bricolage Grotesque',
+        sans-serif;;
     color: rgb(33, 33, 33);
     font-size: 64px;
     line-height: 1;
@@ -114,6 +116,44 @@ padding-bottom: 30px;
     cursor: default;
 }
 
+
+
+.WeatherForecast{
+    font-family: 'Bricolage Grotesque', sans-serif;
+        border-bottom: 1px solid #f9f7fe;
+            margin: 40px 0;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+
+.WeatherForecast .forecast-time {
+    color: rgb(135, 135, 135);
+    font-size: 16px;
+    font-family: 'Bricolage Grotesque', sans-serif ;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+.Weather .WeatherForecast canvas {
+    display: block;
+    margin: 20px auto;
+}
+
+.WeatherForecast .forecast-temperature {
+    color: #c86b85;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+.WeatherForecast .forecast-temperature-min {
+    margin-left: 10px;
+    opacity: .6;
+}
 
 small {
     font-family: 'Bricolage Grotesque',sans-serif;
